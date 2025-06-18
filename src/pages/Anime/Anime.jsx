@@ -14,8 +14,6 @@ const Anime = () => {
             setError(true)
         })
     }, [])
-
-    console.log(anime);
     
     
     return (

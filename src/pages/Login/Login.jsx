@@ -1,15 +1,18 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import Input from "../../components/forms/Input"
 import { loginInputs } from "../../utils/loginForm"
 import { verifyCredentials } from "../../utils/loginCredentials"
 import { useNavigate } from "react-router"
 import { getToken } from "../../services/filmApi"
+import { AppContext } from '../../store/AppContext'
 
 const Login = () => {
     const [values, setValues] = useState({
         username:"",
         password:""
     })
+
+    const {store, setStore} = useContext(AppContext)
 
     const [error, setError] = useState(null)
     const navigate = useNavigate()
@@ -19,6 +22,10 @@ const Login = () => {
         if(verifyCredentials(values)){
             const token = await getToken()
             localStorage.setItem("token", token.data.request_token)
+            setStore({
+                ...store,
+                username : values.username
+            })
             navigate("/")
         }
         else{

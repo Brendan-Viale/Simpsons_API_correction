@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { getAnimes } from "../../services/animeApi"
 import Card from "../../components/Card/Card"
 import { Link } from "react-router"
@@ -6,7 +6,7 @@ import { Link } from "react-router"
 const Home = () => {
     const [animes, setAnimes] = useState([])
     const [error, setError] = useState(false)
-    
+
     useEffect(()=>{
         getAnimes().then((animesRes)=>{
             setAnimes(animesRes.data.data)
