@@ -5,6 +5,7 @@ import Login from "./pages/Login/Login"
 import PrivateRoutes from "./PrivateRoutes"
 import Reducer from "./pages/Reducer/Reducer"
 import Ref from "./pages/Ref/Ref"
+import Toggle from "./pages/Toggle/Toggle"
 
 const Router = () => {
   return (
@@ -17,6 +18,7 @@ const Router = () => {
             <Route path="login" element={<Login />} />
             <Route path="reducer" element={<Reducer />} />
             <Route path="ref" element={<Ref />} />
+            <Route path="toggle" element={<Toggle />} />
         </Route>
     </Routes>
   )
