@@ -4,6 +4,7 @@ import Anime from "./pages/Anime/Anime"
 import Login from "./pages/Login/Login"
 import PrivateRoutes from "./PrivateRoutes"
 import Reducer from "./pages/Reducer/Reducer"
+import Ref from "./pages/Ref/Ref"
 
 const Router = () => {
   return (
@@ -15,6 +16,7 @@ const Router = () => {
             </Route>
             <Route path="login" element={<Login />} />
             <Route path="reducer" element={<Reducer />} />
+            <Route path="ref" element={<Ref />} />
         </Route>
     </Routes>
   )
